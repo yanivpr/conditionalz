@@ -1,3 +1,5 @@
-module PrePostConditions
-  VERSION = "0.0.1"
-end
+require '../lib/pre_post_conditions/condition_base'
+require '../lib/pre_post_conditions/pre_condition'
+require '../lib/pre_post_conditions/post_condition'
+require '../lib/pre_post_conditions/pre_condition_not_met_error'
+require 'lib/pre_post_conditions/post_condition_not_met_error'
