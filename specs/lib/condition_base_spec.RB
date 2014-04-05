@@ -10,9 +10,9 @@ describe PrePostConditions::ConditionBase do
 
       expect {
         PrePostConditions::ConditionBase.verify true_predicate,
-                                                PrePostConditions::PreconditionNotMetError,
+                                                PrePostConditions::PreConditionNotMetError,
                                                 message
-      }.to_not raise_error
+      }.not_to raise_error
     end
 
     it "should not raise postcondition error" do
@@ -20,7 +20,7 @@ describe PrePostConditions::ConditionBase do
 
       expect {
         PrePostConditions::ConditionBase.verify true_predicate,
-                                                PrePostConditions::PostconditionNotMetError,
+                                                PrePostConditions::PostConditionNotMetError,
                                                 message
       }.to_not raise_error
     end
@@ -35,9 +35,9 @@ describe PrePostConditions::ConditionBase do
 
         expect {
           PrePostConditions::ConditionBase.verify false_predicate,
-                                                  PrePostConditions::PreconditionNotMetError,
+                                                  PrePostConditions::PreConditionNotMetError,
                                                   message
-        }.to raise_error PrePostConditions::PreconditionNotMetError, message
+        }.to raise_error PrePostConditions::PreConditionNotMetError, message
       end
 
       it "should raise error with given message proc" do
@@ -46,9 +46,16 @@ describe PrePostConditions::ConditionBase do
 
         expect {
           PrePostConditions::ConditionBase.verify false_predicate,
-                                                  PrePostConditions::PreconditionNotMetError,
+                                                  PrePostConditions::PreConditionNotMetError,
                                                   message_proc
-        }.to raise_error PrePostConditions::PreconditionNotMetError, message
+        }.to raise_error PrePostConditions::PreConditionNotMetError, message
+      end
+
+      it "should raise error with default message" do
+        expect {
+          PrePostConditions::ConditionBase.verify false_predicate,
+                                                  PrePostConditions::PreConditionNotMetError
+        }.to raise_error PrePostConditions::PreConditionNotMetError, 'Condition not met'
       end
     end
 
@@ -58,9 +65,9 @@ describe PrePostConditions::ConditionBase do
 
         expect {
           PrePostConditions::ConditionBase.verify false_predicate,
-                                                  PrePostConditions::PostconditionNotMetError,
+                                                  PrePostConditions::PostConditionNotMetError,
                                                   message
-        }.to raise_error PrePostConditions::PostconditionNotMetError, message
+        }.to raise_error PrePostConditions::PostConditionNotMetError, message
       end
 
       it "should raise error with given message proc" do
@@ -69,10 +76,18 @@ describe PrePostConditions::ConditionBase do
 
         expect {
           PrePostConditions::ConditionBase.verify false_predicate,
-                                                  PrePostConditions::PostconditionNotMetError,
+                                                  PrePostConditions::PostConditionNotMetError,
                                                   message_proc
-        }.to raise_error PrePostConditions::PostconditionNotMetError, message
+        }.to raise_error PrePostConditions::PostConditionNotMetError, message
+      end
+
+      it "should raise error with default message" do
+        expect {
+          PrePostConditions::ConditionBase.verify false_predicate,
+                                                  PrePostConditions::PostConditionNotMetError
+        }.to raise_error PrePostConditions::PostConditionNotMetError, 'Condition not met'
       end
     end
+
   end
 end

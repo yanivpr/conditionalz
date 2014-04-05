@@ -1,6 +1,8 @@
+require_relative 'condition_base'
+
 module PrePostConditions
 
-  class PostconditionNotMetError < StandardError
+  class PostConditionNotMetError < StandardError
     attr_reader :message
     def initialize(message = '')
       @message = message
