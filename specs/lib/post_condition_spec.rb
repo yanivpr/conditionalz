@@ -9,7 +9,7 @@ describe PrePostConditions::PostCondition do
     PrePostConditions::ConditionBase.should_receive(:verify).
         with(predicate, PrePostConditions::PostConditionNotMetError, message)
 
-    PrePostConditions::PostCondition.require predicate, message
+    PrePostConditions::PostCondition.ensure predicate, message
   end
 
   it "should call the condition base with pre condition error and message_proc" do
@@ -17,6 +17,6 @@ describe PrePostConditions::PostCondition do
     PrePostConditions::ConditionBase.should_receive(:verify).
         with(predicate, PrePostConditions::PostConditionNotMetError, message_proc)
 
-    PrePostConditions::PostCondition.require predicate, message_proc
+    PrePostConditions::PostCondition.ensure predicate, message_proc
   end
 end
