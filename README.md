@@ -1,7 +1,10 @@
 conditionz
 ===================
 
-Semantic Design-By-Contract pre-conditions and post-conditions
+# Description
+
+Semantic Design-By-Contract pre-conditions and post-conditions.
+
 The purpose is to raise an error when a certain condition or more are not met.
 
 See
