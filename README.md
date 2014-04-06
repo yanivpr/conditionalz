@@ -5,7 +5,9 @@ Semantic Design-By-Contract pre-conditions and post-conditions
 
 See
 http://en.wikipedia.org/wiki/Design_by_contract
+
 http://en.wikipedia.org/wiki/Precondition
+
 http://en.wikipedia.org/wiki/Postcondition
 
 
@@ -19,6 +21,7 @@ gem 'conditionalz'
 
 Suppose you have the following class:
 
+```ruby
 class MyTime
   attr_accessor :hour, :minute
 
@@ -27,11 +30,15 @@ class MyTime
     minute = new_minute
   end
 end
+```
 
 Include the pre condition
 
+```ruby
 include Conditionalz::Precondition
+```
 
+```ruby
 class MyTime
   attr_accessor :hour, :minute
 
@@ -43,5 +50,6 @@ class MyTime
     minute = new_minute
   end
 end
+```
 
 
