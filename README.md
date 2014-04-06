@@ -15,9 +15,15 @@ http://en.wikipedia.org/wiki/Postcondition
 
 # Installation
 
-In your gemfile, add:
+Add to your Gemfile:
 
-gem 'conditionz'
+gem 'mailboxer'
+
+```gem 'conditionz'```
+
+Then run:
+
+```bundle install```
 
 # Usage
 
@@ -38,7 +44,7 @@ Now you wish that initialize method parameters are within a certain range.
 Include the pre condition, and add the precondition
 
 ```ruby
-include Precondition
+include Conditionz
 
 class MyTime
   attr_accessor :hour, :minute
@@ -62,17 +68,16 @@ Precondition.require 0 <= new_hour && new_hour <= 23, Proc.new { "Hour must be b
 ```
 
 Analogously, you can ensure post conditions:
+(In this example, instead of ```include```, the fully qualified name is used
 
 ```ruby
-include Precondition
-
 class MyQueue
   attr_accessor :size
 
   def push(item)
     # some implementation of pushing to queue...
 
-    PostCondition.ensure size > 0
+    Conditionz::PostCondition.ensure size > 0
   end
 end
 ```
@@ -87,3 +92,7 @@ def foo
   second_result = sqrt first_result
 end
 ```
+
+# License
+
+see MIT-LICENSE
