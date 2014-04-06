@@ -80,8 +80,10 @@ end
 
 Not directly related, and preferably unit tested, but could be useful - assert a predicate
 
+```ruby
 def foo
   first_result = first_calculation()
   Assert.that first_result > 0, "result should have been positive"
   second_result = sqrt first_result
 end
+```
