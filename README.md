@@ -17,13 +17,15 @@ http://en.wikipedia.org/wiki/Postcondition
 
 Add to your Gemfile:
 
-gem 'mailboxer'
-
-```gem 'conditionz'```
+```ruby
+gem 'conditionz'
+```
 
 Then run:
 
-```bundle install```
+```ruby
+bundle install
+```
 
 # Usage
 
