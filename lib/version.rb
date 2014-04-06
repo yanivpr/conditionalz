@@ -1,3 +1,3 @@
-module PrePostConditions
-  VERSION = "0.0.3"
+module Conditionz
+  VERSION = "0.0.4"
 end

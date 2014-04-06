@@ -1,0 +1,5 @@
+require '../lib/conditionz/condition_base'
+require '../lib/conditionz/pre_condition'
+require '../lib/conditionz/post_condition'
+require '../lib/conditionz/pre_condition_not_met_error'
+require 'lib/conditionz/post_condition_not_met_error'

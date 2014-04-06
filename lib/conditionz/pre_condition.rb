@@ -1,6 +1,6 @@
 require_relative 'condition_base'
 
-module PrePostConditions
+module Conditionz
 
   # Raise precondition error when +predicate+ is false
   class PreCondition

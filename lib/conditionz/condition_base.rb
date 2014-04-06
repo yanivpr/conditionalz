@@ -1,7 +1,7 @@
 require_relative 'pre_condition_not_met_error'
 require_relative 'post_condition_not_met_error'
 
-module PrePostConditions
+module Conditionz
 
   # Raise error when +predicate+ is false
   class ConditionBase
@@ -16,8 +16,8 @@ module PrePostConditions
     #
     # ==== Examples
     #
-    # ConditionBase.verify age > 0, PrePostConditions::PreCondition, "Age must be positive"
-    # ConditionBase.verify age > 0, PrePostConditions::PreCondition
+    # ConditionBase.verify age > 0, Conditionz::PreCondition, "Age must be positive"
+    # ConditionBase.verify age > 0, Conditionz::PreCondition
     #
     def self.verify predicate, error_class, message = 'Condition not met'
       return if predicate

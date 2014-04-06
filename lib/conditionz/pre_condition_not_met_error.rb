@@ -1,4 +1,4 @@
-module PrePostConditions
+module Conditionz
 
   # Raised when a precondition is not met
   class PreConditionNotMetError < StandardError
