@@ -15,7 +15,7 @@ http://en.wikipedia.org/wiki/Postcondition
 
 In your gemfile, add:
 
-gem 'conditionalz'
+gem 'conditionz'
 
 # Usage
 
@@ -35,14 +35,14 @@ end
 Include the pre condition, and add the precondition
 
 ```ruby
-include Conditionalz::Precondition
+include Conditionz::Precondition
 
 class MyTime
   attr_accessor :hour, :minute
 
   def initialize(new_hour, new_minute)
-    Conditionalz::Precondition.require 0 <= new_hour && new_hour <= 23, "Hour must be between 0 and 23"
-    Conditionalz::Precondition.require 0 <= new_minute && new_minute <= 59, "Minute must be between 0 and 59"
+    Conditionz::Precondition.require 0 <= new_hour && new_hour <= 23, "Hour must be between 0 and 23"
+    Conditionz::Precondition.require 0 <= new_minute && new_minute <= 59, "Minute must be between 0 and 59"
 
     hour = new_hour
     minute = new_minute
