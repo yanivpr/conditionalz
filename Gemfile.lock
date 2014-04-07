@@ -1,3 +1,8 @@
+PATH
+  remote: .
+  specs:
+    conditionz (0.0.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -15,4 +20,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rspec
+  conditionz!
+  rspec (~> 2.6)
